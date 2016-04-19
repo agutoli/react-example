@@ -9,7 +9,11 @@ import AboutContainer from './AboutContainer.jsx';
 class App extends React.Component {
   render(){
     return (
-      <div>{this.props.children}</div>
+      <div>
+        <h1>Experience Builder</h1>
+        <hr />
+        <div>{this.props.children}</div>
+      </div>
     );
   }
 }

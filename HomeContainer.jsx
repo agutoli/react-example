@@ -9,18 +9,10 @@ class HomeContainer extends ContainerRenderer {
   constructor(props) {
     super(props);
 
+    this.setTitle("HomeContainer");
+
     this.addResource(LoggedResource);
     this.addResource(NotLoggedResource);
-  }
-
-  render(){
-    const chosenResource = this.chooseResource();
-
-    return (
-      <DocumentTitle title="Home">
-        <chosenResource />
-      </DocumentTitle>
-    );
   }
 }
 
