@@ -1,10 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, Route, Link, browserHistory } from 'react-router';
-
-// Containers
-import HomeContainer from './HomeContainer.jsx';
-import AboutContainer from './AboutContainer.jsx';
+import Routers from './routers.jsx';
 
 class App extends React.Component {
   render(){
@@ -18,12 +14,4 @@ class App extends React.Component {
   }
 }
 
-render((
-  <Router history={browserHistory}>
-    <Route path="/" component={App}>
-      {/* <Route path="<ContainerPath>" component=<ContainerClass> /> */}
-      <Route path="home" component={HomeContainer} />
-      <Route path="about" component={AboutContainer} />
-    </Route>
-  </Router>
-), document.getElementById('app'))
+render(Routers(App), document.getElementById('app'))
