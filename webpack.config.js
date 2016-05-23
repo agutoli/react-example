@@ -1,25 +1,20 @@
-var webpack = require('webpack'),
-    path = require('path');
+const webpack = require('webpack'),
+      path = require('path');
 
 module.exports = {
-    debug: true,
     entry: {
-        main: './main.jsx'
+        main: './main.js'
     },
     output: {
         path: path.join(__dirname, 'dist'),
         filename: 'bundle.js'
     },
-    devServer: {
-      port: 8080,
-      historyApiFallback: true
-    },
     module: {
         loaders: [
           {
-            test: /\.jsx?$/,
-            exclude: /(node_modules|bower_components)/,
-            loader: 'babel', // 'babel-loader' is also a legal name to reference
+            test: /\.js$/,
+            exclude: /node_modules/,
+            loader: 'babel',
             query: {
               presets: ['es2015', 'react']
             }
