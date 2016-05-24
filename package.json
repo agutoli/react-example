@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --production"
+    "build": "webpack --production",
+    "dev": "webpack-dev-server --content-base dist/"
   },
   "author": "",
   "devDependencies": {

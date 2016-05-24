@@ -25937,7 +25937,7 @@
 
 	var _LoginResource2 = _interopRequireDefault(_LoginResource);
 
-	var _HomeResource = __webpack_require__(237);
+	var _HomeResource = __webpack_require__(241);
 
 	var _HomeResource2 = _interopRequireDefault(_HomeResource);
 
@@ -26323,6 +26323,10 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _actions = __webpack_require__(237);
+
+	var _actions2 = _interopRequireDefault(_actions);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -26341,9 +26345,34 @@
 	    }
 
 	    _createClass(LoginResource, [{
+	        key: 'onClick_asdsadasdasdasdas',
+	        value: function onClick_asdsadasdasdasdas(event) {
+	            _actions2.default.onOpenModal(event, { options: [] });
+	            _actions2.default.onCloseModal(event, { options: [] });
+	        }
+	    }, {
+	        key: 'onClick_asdasdasdasdasd',
+	        value: function onClick_asdasdasdasdasd(event) {
+	            _actions2.default.onOpenModal(event, { options: [] });
+	            _actions2.default.onRunScript(event, { options: [] });
+	        }
+	    }, {
+	        key: 'onChange_asdasasdasdasdasddasdas',
+	        value: function onChange_asdasasdasdasdasddasdas(event) {
+	            _actions2.default.onOpenModal(event, { options: [] });
+	            _actions2.default.onCloseModal(event, { options: [] });
+	        }
+	    }, {
 	        key: 'render',
 	        value: function render() {
-	            return _react2.default.createElement('div', null);
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement('button', {
+	                    onClick: this.onClick_asdsadasdasdasdas,
+	                    onChange: this.onChange_asdasasdasdasdasddasdas }),
+	                _react2.default.createElement('button', { onClick: this.onClick_asdasdasdasdasd })
+	            );
 	        }
 	    }]);
 
@@ -26354,6 +26383,111 @@
 
 /***/ },
 /* 237 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _changeStyles = __webpack_require__(238);
+
+	var _changeStyles2 = _interopRequireDefault(_changeStyles);
+
+	var _runScript = __webpack_require__(239);
+
+	var _runScript2 = _interopRequireDefault(_runScript);
+
+	var _pagination = __webpack_require__(240);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var Actions = function () {
+	    function Actions() {
+	        var injection = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+
+	        _classCallCheck(this, Actions);
+
+	        this.registerEventTypes({
+	            onRunScript: injection.runScript || _runScript2.default,
+	            onLoadNextPage: injection.loadNext || _pagination.loadNext,
+	            onLoadFirstPage: injection.loadFirst || _pagination.loadFirst,
+	            onLoadPreviousPage: injection.loadPrevious || _pagination.loadPrevious,
+	            onChangeStyles: injection.changeStyles || _changeStyles2.default
+	        });
+	    }
+
+	    _createClass(Actions, [{
+	        key: 'registerEventTypes',
+	        value: function registerEventTypes(eventTypes) {
+	            Object.assign(this, eventTypes);
+	        }
+	    }]);
+
+	    return Actions;
+	}();
+
+	exports.default = {
+	    onRunScript: injection.runScript || _runScript2.default,
+	    onChangeStyles: injection.changeStyles || _changeStyles2.default
+	};
+
+/***/ },
+/* 238 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	exports.default = function (action, event) {
+	  // do something
+	};
+
+/***/ },
+/* 239 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	exports.default = function (action, event) {
+	  // do something
+	};
+
+/***/ },
+/* 240 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	var loadFirst = exports.loadFirst = function loadFirst(action) {
+	    // do something
+	};
+
+	var loadNext = exports.loadNext = function loadNext(action) {
+	    // do something
+	};
+
+	var loadPrevious = exports.loadPrevious = function loadPrevious(action) {
+	    // do something
+	};
+
+/***/ },
+/* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';

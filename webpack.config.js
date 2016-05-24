@@ -9,6 +9,10 @@ module.exports = {
         path: path.join(__dirname, 'dist'),
         filename: 'bundle.js'
     },
+    devServer: {
+        port: 8080,
+        historyApiFallback: true
+    },
     module: {
         loaders: [
           {
