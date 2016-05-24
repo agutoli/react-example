@@ -1,8 +1,8 @@
 import React from 'react';
 
 import runScript from '../xb/actions/runScript';
-import { loadFirstPage } from '../xb/actions/pagination';
 import changeStyles from '../xb/actions/changeStyles';
+import loadFirstPage from '../xb/actions/loadFirstPage';
 
 export default class LoginResource extends React.Component {
 
