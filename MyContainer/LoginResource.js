@@ -10,21 +10,21 @@ export default class LoginResource extends React.Component {
         super(props);
     }
 
-    onClick_asdsadasdasdasdas(event) {
+    onClick_node_id_asd8a7d6as6asd63423dsasad(event) {
         changeStyles(event, {});
         loadFirstPage(event, {});
         runScript(event, {});
     };
 
-    onClick_asdasdasdasdasd(event) {
+    onClick_node_id_423rskfdsjf434rjdsadasdas(event) {
         runScript(event, {});
     };
 
     render(){
         return (
             <div>
-              <button onClick={this.onClick_asdsadasdasdasdas.bind(this)}>My Click 1</button>
-              <button onClick={this.onClick_asdasdasdasdasd.bind(this)}>My Click 2</button>
+              <button onClick={this.onClick_node_id_asd8a7d6as6asd63423dsasad.bind(this)}>My Click 1</button>
+              <button onClick={this.onClick_node_id_423rskfdsjf434rjdsadasdas.bind(this)}>My Click 2</button>
             </div>
         );
     }
