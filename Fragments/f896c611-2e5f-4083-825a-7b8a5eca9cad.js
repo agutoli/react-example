@@ -4,7 +4,7 @@ export default class SomeFragment extends React.Component {
     render(){
         return (
             <div className="someFragment">
-                This is my fragment
+                This is my generated fragment
             </div>
         );
     }
