@@ -4,7 +4,7 @@ export default class SomeFragment extends React.Component {
     render(){
         return (
             <div className="someFragment">
-                Modal Fragment
+                This is my fragment
             </div>
         );
     }

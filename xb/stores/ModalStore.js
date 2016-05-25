@@ -9,12 +9,13 @@ class ModalStore {
         });
 
         this.state = {
+            content:  '',
             visible: false
         };
     }
 
-    show() {
-        this.setState({ visible: true });
+    show(opts) {
+        this.setState({ visible: true, content: opts.content });
     }
 
     hide() {

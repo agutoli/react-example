@@ -1,9 +1,13 @@
 import alt from '../alt';
 
 class ModalActions {
+
   constructor() {
-    this.generateActions('show');
     this.generateActions('hide');
+  }
+
+  show(content) {
+      return { content };
   }
 }
 

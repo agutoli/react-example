@@ -6,6 +6,8 @@ import loadFirstPage from '../xb/eventActions/loadFirstPage';
 import showModal from '../xb/eventActions/showModal';
 import hideModal from '../xb/eventActions/hideModal';
 
+import Fragment1 from '../Fragments/f896c611-2e5f-4083-825a-7b8a5eca9cad';
+
 export default class LoginResource extends React.Component {
 
     constructor(props) {
@@ -16,16 +18,12 @@ export default class LoginResource extends React.Component {
         // changeStyles(event, {});
         // loadFirstPage(event, {});
         // runScript(event, {});
-        hideModal(event);
+        hideModal();
     };
 
     onClick_node_id_423rskfdsjf434rjdsadasdas(event) {
         // runScript(event, {});
-        showModal(event, {
-            "modal":{
-                "resourceId":"f896c611-2e5f-4083-825a-7b8a5eca9cad"
-            }
-        });
+        showModal(<Fragment1 />);
     };
 
     render(){

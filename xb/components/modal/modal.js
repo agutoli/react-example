@@ -15,10 +15,9 @@ class Modal extends React.Component {
 
     render(){
         if (! this.props.visible) return null;
-
         return (
             <div className="app-modal">
-                Here`s the modal content
+                {this.props.content}
             </div>
         );
     }

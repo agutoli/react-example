@@ -1,5 +1,5 @@
 import ModalActions from '../actions/ModalActions';
 
-export default (event, options) => {
-    ModalActions.show();
+export default (fragmentComponent) => {
+    ModalActions.show(fragmentComponent);
 };
