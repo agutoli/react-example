@@ -1,13 +1,18 @@
 const webpack = require('webpack'),
-      path = require('path');
+      path = require('path'),
+      I18nPlugin = require('i18n-webpack-plugin');
 
-module.exports = {
+const LANGUAGES = [
+    'en-US',
+    'es-MX',
+    'pt-BR',
+];
+
+const distFolder = path.join(__dirname, 'dist');
+
+const config = {
     entry: {
         main: './main.js'
-    },
-    output: {
-        path: path.join(__dirname, 'dist'),
-        filename: 'bundle.js'
     },
     devServer: {
         port: 8080,
@@ -20,9 +25,28 @@ module.exports = {
             exclude: /node_modules/,
             loader: 'babel',
             query: {
-              presets: ['es2015', 'react']
+              presets: ['react', 'es2015']
             }
           }
         ]
     }
 };
+
+const bundles = LANGUAGES.map((language) => {
+    const languageContent = require(`./languages/${ language }.json`);
+
+    return Object.assign(
+        {},
+        config, {
+        output: {
+            path: distFolder,
+            filename: `${ language }.[name].js`
+        },
+        name: language,
+        plugins: [
+            new I18nPlugin(languageContent)
+        ]
+    });
+});
+
+module.exports = bundles;
