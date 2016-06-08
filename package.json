@@ -9,6 +9,7 @@
   },
   "author": "",
   "devDependencies": {
+    "xb-common-lib": "git@bitbucket.org:scup/xb-common-lib.git",
     "alt": "^0.18.4",
     "alt-utils": "^1.0.0",
     "babel-core": "^6.7.7",
