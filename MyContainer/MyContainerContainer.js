@@ -1,9 +1,11 @@
 import React from 'react';
-import ContainerRenderer from '../xb/ContainerRenderer';
+import components from 'xb-common-lib';
+
 import LoginResource from './LoginResource';
 import HomeResource from './HomeResource';
 
-class MyContainerContainer extends ContainerRenderer {
+
+class MyContainerContainer extends components.ContainerRenderer {
     constructor(props) {
         super(props);
         this.addResource(LoginResource);

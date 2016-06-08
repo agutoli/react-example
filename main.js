@@ -1,8 +1,9 @@
 import React from 'react';
 import { render } from 'react-dom';
 import Routers from './routers';
+import { components } from 'xb-common-lib';
 
-import Modal from './xb/components/modal';
+const Modal = { components };
 
 class App extends React.Component {
   render(){

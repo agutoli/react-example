@@ -1,12 +1,8 @@
 import React from 'react';
-
-import runScript from '../xb/eventActions/runScript';
-import changeStyles from '../xb/eventActions/changeStyles';
-import loadFirstPage from '../xb/eventActions/loadFirstPage';
-import showModal from '../xb/eventActions/showModal';
-import hideModal from '../xb/eventActions/hideModal';
-
+import { components } from 'xb-common-lib';
 import Fragment1 from '../Fragments/f896c611-2e5f-4083-825a-7b8a5eca9cad';
+
+const { runScript, changeStyles, loadFirstPage, showModal, hideModal } = components;
 
 export default class LoginResource extends React.Component {
 
