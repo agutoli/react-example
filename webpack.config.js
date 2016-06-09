@@ -11,6 +11,8 @@ const LANGUAGES = [
 const distFolder = path.join(__dirname, 'dist');
 
 const config = {
+    devtool: 'source-map',
+    debug: true,
     entry: {
         main: './main.js'
     },

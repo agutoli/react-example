@@ -1,8 +1,6 @@
 import React from 'react';
-import { components } from 'xb-common-lib';
+import { eventActions } from 'xb-common-lib';
 import Fragment1 from '../Fragments/f896c611-2e5f-4083-825a-7b8a5eca9cad';
-
-const { runScript, changeStyles, loadFirstPage, showModal, hideModal } = components;
 
 export default class LoginResource extends React.Component {
 
@@ -14,12 +12,12 @@ export default class LoginResource extends React.Component {
         // changeStyles(event, {});
         // loadFirstPage(event, {});
         // runScript(event, {});
-        hideModal();
+        eventActions.hideModal();
     };
 
     onClick_node_id_423rskfdsjf434rjdsadasdas(event) {
         // runScript(event, {});
-        showModal(<Fragment1 />);
+        eventActions.showModal(<Fragment1 />);
     };
 
     render(){

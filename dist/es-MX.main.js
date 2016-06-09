@@ -68,7 +68,7 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Modal = { components: _xbCommonLib.components };
+	console.log('React:::', _react2.default);
 
 	var App = function (_React$Component) {
 	  _inherits(App, _React$Component);
@@ -101,7 +101,7 @@
 	          null,
 	          this.props.children
 	        ),
-	        _react2.default.createElement(Modal, null)
+	        _react2.default.createElement(_xbCommonLib.Modal, null)
 	      );
 	    }
 	  }]);
@@ -25941,8 +25941,6 @@
 
 	var _xbCommonLib = __webpack_require__(231);
 
-	var _xbCommonLib2 = _interopRequireDefault(_xbCommonLib);
-
 	var _LoginResource = __webpack_require__(232);
 
 	var _LoginResource2 = _interopRequireDefault(_LoginResource);
@@ -25959,8 +25957,8 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var MyContainerContainer = function (_components$Container) {
-	    _inherits(MyContainerContainer, _components$Container);
+	var MyContainerContainer = function (_ContainerRenderer) {
+	    _inherits(MyContainerContainer, _ContainerRenderer);
 
 	    function MyContainerContainer(props) {
 	        _classCallCheck(this, MyContainerContainer);
@@ -25973,7 +25971,7 @@
 	    }
 
 	    return MyContainerContainer;
-	}(_xbCommonLib2.default.ContainerRenderer);
+	}(_xbCommonLib.ContainerRenderer);
 
 	exports.default = MyContainerContainer;
 
@@ -26048,7 +26046,7 @@
 	/******/ 	}
 	/******/ 	
 	/******/ 	var hotApplyOnUpdate = true;
-	/******/ 	var hotCurrentHash = "9e9facc4cb9750a677c3"; // eslint-disable-line no-unused-vars
+	/******/ 	var hotCurrentHash = "fae723a70919f9ecc085"; // eslint-disable-line no-unused-vars
 	/******/ 	var hotCurrentModuleData = {};
 	/******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 	/******/ 	
@@ -26611,19 +26609,17 @@
 		  runScript: _runScript2.default,
 		  changeStyles: _changeStyles2.default,
 		  loadFirstPage: _loadFirstPage2.default
-		}; // Event actions
-
-
-		var components = {
-		  Modal: _modal2.default,
-		  ContainerRenderer: _containerRenderer2.default
 		};
 
 		/**
 		 * Exports only the external API
 		 */
+		// Event actions
 		exports.default = {
-		  components: components,
+		  // components
+		  Modal: _modal2.default,
+		  ContainerRenderer: _containerRenderer2.default,
+
 		  eventActions: eventActions
 		};
 
@@ -31275,8 +31271,8 @@
 		    key: 'chooseResource',
 		    value: function chooseResource() {
 		      /**
-		      * TODO: Implements variants router
-		      */
+		       * TODO: Implements variants router
+		       */
 		      return _react2.default.createElement(this.resources[0]);
 		    }
 		  }, {
@@ -31589,12 +31585,6 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var runScript = _xbCommonLib.components.runScript;
-	var changeStyles = _xbCommonLib.components.changeStyles;
-	var loadFirstPage = _xbCommonLib.components.loadFirstPage;
-	var showModal = _xbCommonLib.components.showModal;
-	var hideModal = _xbCommonLib.components.hideModal;
-
 	var LoginResource = function (_React$Component) {
 	    _inherits(LoginResource, _React$Component);
 
@@ -31610,13 +31600,13 @@
 	            // changeStyles(event, {});
 	            // loadFirstPage(event, {});
 	            // runScript(event, {});
-	            hideModal();
+	            _xbCommonLib.eventActions.hideModal();
 	        }
 	    }, {
 	        key: 'onClick_node_id_423rskfdsjf434rjdsadasdas',
 	        value: function onClick_node_id_423rskfdsjf434rjdsadasdas(event) {
 	            // runScript(event, {});
-	            showModal(_react2.default.createElement(_f896c6112e5f4083825a7b8a5eca9cad2.default, null));
+	            _xbCommonLib.eventActions.showModal(_react2.default.createElement(_f896c6112e5f4083825a7b8a5eca9cad2.default, null));
 	        }
 	    }, {
 	        key: 'render',
