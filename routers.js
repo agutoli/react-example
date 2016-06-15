@@ -21,3 +21,34 @@ export default (App) => {
         </Router>
     );
 };
+
+class AppRoute extends Relay.Route {
+    static path = '/';
+    static queries = {
+        user: () => Relay.QL`query { user }`,
+    };
+    static routeName = 'LauncherRoute';
+}
+
+export default (App) => {
+    return (
+        <Router
+            history={ browserHistory }
+            createElement={createRelayContainer}>
+            <Route>
+                <Route
+                    name="home" // added a name to the route
+                    path="/"
+                    component={App}
+                    queries={HomeQueries} // and the query
+                />
+                <Route
+                    name="widget"
+                    path="/widget/:id"
+                    component={Widget}
+                    queries={WidgetQueries}
+                />
+            </Route>
+        </Router>,
+    );
+}
