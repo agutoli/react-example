@@ -1,4 +1,6 @@
 import React from 'react';
+import Relay from 'react-relay';
+
 import { Router, Route, Link, browserHistory } from 'react-router';
 
 import MyContainerContainer from './MyContainer/MyContainerContainer';
@@ -24,6 +26,7 @@ export default (App) => {
 
 class AppRoute extends Relay.Route {
     static path = '/';
+
     static queries = {
         user: () => Relay.QL`query { user }`,
     };

@@ -9,7 +9,7 @@
   },
   "author": "",
   "devDependencies": {
-    "xb-common-lib": "git@bitbucket.org:scup/xb-common-lib.git",
+    "xb-common-lib": "git@bitbucket.org:sprinklr/xb-common-lib.git",
     "alt": "^0.18.4",
     "alt-utils": "^1.0.0",
     "babel-core": "^6.7.7",
@@ -25,5 +25,8 @@
     "react-router": "^2.3.0",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {
+    "babel-preset-stage-0": "^6.5.0"
   }
 }

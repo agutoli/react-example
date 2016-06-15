@@ -7,11 +7,15 @@ Relay.injectNetworkLayer(new Relay.DefaultNetworkLayer('localhost:5000/schema/xb
 
 // The root queries for the main site
 var HomeQueries = {
-  user: (Component) => Relay.QL`
-    user {
-      viewer {
-        ${Component.getFragment('user')},
-      },
+  Content922ec9531b1f94add983a8ce2ebdc97b: (Component) => Relay.QL`
+    query Content922ec9531b1f94add983a8ce2ebdc97b {
+        contents {
+            edges {
+                node {
+                    id
+                }
+            }
+        }
     }
   `,
 };

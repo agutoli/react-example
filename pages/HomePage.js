@@ -1,14 +1,12 @@
 import React from 'react';
 import { ContainerRenderer } from 'xb-common-lib';
 
-import LoginResource from './LoginResource';
-import HomeResource from './HomeResource';
+import DefaultVariant from './HomeContainer/DefaultVariant';
 
 class MyContainerContainer extends ContainerRenderer {
     constructor(props) {
         super(props);
-        this.addResource(LoginResource);
-        this.addResource(HomeResource);
+        this.addVariant(DefaultVariant);
     }
 }
 
