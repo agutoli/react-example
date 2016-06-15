@@ -7,7 +7,9 @@ let baseUrl = '/';
 const { hostname, pathname } = window.location;
 
 if(hostname === 'localhost') {
-  baseUrl = pathname.match(/^\/project\/([a-f0-9]+\-)+[a-f0-9]+\/?/)[0];
+  try{
+      baseUrl = pathname.match(/^\/project\/([a-f0-9]+\-)+[a-f0-9]+\/?/)[0];
+  } catch(e) {}
 }
 
 export default (App) => {
