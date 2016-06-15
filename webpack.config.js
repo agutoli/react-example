@@ -28,7 +28,7 @@ const config = {
             loader: 'babel-loader',
             query: {
               presets: ['react', 'es2015', 'stage-0'],
-              plugins: ['./babelRelayPlugin']
+              plugins: [__dirname + '/babelRelayPlugin']
             }
           }
         ]
