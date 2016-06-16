@@ -27,6 +27,6 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
-    "babel-preset-stage-0": "^6.5.0"
+    "babel-preset-stage-1": "^6.5.0"
   }
 }
