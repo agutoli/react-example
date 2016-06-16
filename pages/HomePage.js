@@ -1,11 +1,12 @@
 import React from 'react';
-import { ContainerRenderer } from 'xb-common-lib';
+import { PageRenderer } from 'xb-common-lib';
 
 import DefaultVariant from './HomePage/DefaultVariant';
 
-class HomePage extends ContainerRenderer {
+class HomePage extends PageRenderer {
     constructor(props) {
         super(props);
+        this.title = 'Title';
         this.addVariant(DefaultVariant);
     }
 }

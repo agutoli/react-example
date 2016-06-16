@@ -10,3 +10,5 @@ class DefaultVariantRoute extends Relay.Route {
     `
   }
 }
+
+export default DefaultVariantRoute;
