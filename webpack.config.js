@@ -15,7 +15,7 @@ const config = {
     devtool: 'source-map',
     debug: true,
     entry: {
-        main: './app.js'
+        app: './app.js'
     },
     devServer: {
         port: 8080,

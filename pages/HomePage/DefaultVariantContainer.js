@@ -2,11 +2,17 @@ import Relay from 'react-relay';
 
 import DefaultVariant from './DefaultVariant';
 
-export default Relay.Container(DefaultVariant, {
+export default Relay.createContainer(DefaultVariant, {
     fragments: {
-        content: () => Relay.QL `
-            fragment on Content {
-                message,
+        query1: () => Relay.QL `
+            fragment on ContentsConnection {
+                edges {
+                    node {
+                        id,
+                        title,
+                        message
+                    }
+                }
             }
         `
     }

@@ -16,7 +16,7 @@ export default (App) => {
             createElement={ReactRouterRelay.createElement}>
             <Route component={App}>
                 <Route
-                    path="/"
+                    path="/example"
                     component={HomePage} />
             </Route>
         </Router>
