@@ -1,6 +1,6 @@
 import React from 'react';
 import { eventActions } from 'xb-common-lib';
-// import Fragment1 from '../../fragments/ModalFragment';
+import Fragment1 from '../../fragments/ModalFragment';
 
 class DefaultVariant extends React.Component {
     render() {

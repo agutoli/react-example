@@ -18,7 +18,9 @@ class DefaultVariantRoute extends Relay.Route {
                 page: {
                     page: 0,
                     size: 10
-                }
+                },
+                experienceId: "5b51be2f-3dfa-46cb-996d-8b0a87aadc76",
+                projectId: "c293b805-03d6-4adb-8ccc-c54c104dc720"
             },
         ) {
             ${Component.getFragment('query1')}
