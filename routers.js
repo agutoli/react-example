@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, Link, browserHistory } from 'react-router';
+import { Router, IndexRoute, Route, Link, browserHistory } from 'react-router';
 
 import MyContainerContainer from './MyContainer/MyContainerContainer';
 
@@ -16,7 +16,9 @@ export default (App) => {
     return (
         <Router history={browserHistory}>
             <Route path={baseUrl} component={App}>
+                <IndexRoute component={MyContainerContainer} />
                 <Route path="mycontainer" component={MyContainerContainer} />
+                <Route path="mycontainer/:param" component={MyContainerContainer} />
             </Route>
         </Router>
     );
