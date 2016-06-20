@@ -11,9 +11,13 @@ export default Relay.createContainer(ContentFragment, {
             }
         `,
         store_2d88bb42_89e0_4b1b_9428_a244bf0c3bed: () => Relay.QL`
-            fragment on Comment {
-                id,
-                ${CommentFragmentContainer.getFragment('store_2d88bb42_89e0_4b1b_9428_a244bf0c3bed')}
+            fragment on CommentsConnection {
+                edges {
+                    node {
+                        id,
+                        ${CommentFragmentContainer.getFragment('store_2d88bb42_89e0_4b1b_9428_a244bf0c3bed')}
+                    }
+                }
             }
         `
     }

@@ -1,15 +1,23 @@
 import React from 'react';
+import Relay from 'react-relay';
 import { eventActions } from 'xb-common-lib';
 import Fragment1 from '../../fragments/ModalFragment';
+import ContentFragment from '../../fragments/ContentFragment';
+import ContentFragmentContainer from '../../fragments/ContentFragmentContainer';
+import ContentFragmentRoute from '../../fragments/ContentFragmentRoute';
 
 class DefaultVariant extends React.Component {
     render() {
         return (
             <div>
                 {
-                    this.props.store_b5de1559_4266_445c_8799_03023734c36e((obj, i) => {
+                    this.props.store_b5de1559_4266_445c_8799_03023734c36e.edges.map((obj, i) => {
                         return (
-                            <ContentFragment key={i} content={obj} />
+                            <Relay.Container
+                                key={i}
+                                Component={ContentFragmentContainer}
+                                renderFetched={props => <ContentFragment content={obj} {...props} />}
+                                route={new ContentFragmentRoute()} />
                         );
                     })
                 }
