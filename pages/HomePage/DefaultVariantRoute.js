@@ -3,7 +3,7 @@ import Relay from 'react-relay';
 class DefaultVariantRoute extends Relay.Route {
   static routeName = 'HomePageDefaultVariant';
   static queries = {
-    query1: (Component) => Relay.QL`
+    store_b5de1559_4266_445c_8799_03023734c36e: (Component) => Relay.QL`
       query {
         contents(
             query:{
@@ -23,7 +23,11 @@ class DefaultVariantRoute extends Relay.Route {
                 projectId: "c293b805-03d6-4adb-8ccc-c54c104dc720"
             },
         ) {
-            ${Component.getFragment('query1')}
+            edges {
+                node {
+                    ${Component.getFragment('store_b5de1559_4266_445c_8799_03023734c36e')}
+                }
+            }
         }
       }
     `

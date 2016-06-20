@@ -3,7 +3,7 @@ import CommentFragment from './CommentFragment';
 
 Relay.createContainer(CommentFragment, {
     fragments: {
-        comment: () => Relay.QL`
+        store_2d88bb42_89e0_4b1b_9428_a244bf0c3bed: () => Relay.QL`
             {
                 fragment on Comment {
                     message

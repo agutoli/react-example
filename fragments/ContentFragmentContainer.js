@@ -1,25 +1,20 @@
 import Relay from 'react-relay';
 import ContentFragment from './ContentFragment';
-import CommentFragment from './CommentFragmentContainer'
+import CommentFragmentContainer from './CommentFragmentContainer';
 
-Relay.createContainer(ContentFragment, {
+export default Relay.createContainer(ContentFragment, {
     fragments: {
-        content: () => Relay.QL`
-            {
-                fragment on Content {
-                    title,
-                    message
-                }
+        store_b5de1559_4266_445c_8799_03023734c36e: () => Relay.QL`
+            fragment on Content {
+                title,
+                message
             }
         `,
-
-        comments: () => Relay.QL`
-            {
-                fragment on Comment {
-                    id,
-                    ${CommentFragmentContainer.getFragment('comments')}
-                }
+        store_2d88bb42_89e0_4b1b_9428_a244bf0c3bed: () => Relay.QL`
+            fragment on Comment {
+                id,
+                ${CommentFragmentContainer.getFragment('store_2d88bb42_89e0_4b1b_9428_a244bf0c3bed')}
             }
         `
     }
-})
+});
