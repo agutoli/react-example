@@ -7,6 +7,7 @@ import HomeResource from './HomeResource';
 class MyContainerContainer extends ContainerRenderer {
     constructor(props) {
         super(props);
+        console.log(this.props.params);
         this.addResource(LoginResource);
         this.addResource(HomeResource);
     }
