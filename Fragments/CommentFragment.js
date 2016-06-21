@@ -6,7 +6,7 @@ class CommentFragment extends React.Component {
     render() {
         return (
             <div>
-                {this.renderComments()}</p>
+                {this.renderComments()}
             </div>
         );
     }

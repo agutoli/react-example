@@ -1,7 +1,7 @@
 import React from 'react';
 import Relay from 'react-relay';
 
-import CommentRoute from '../CommentRoute';
+import CommentRoute from './CommentRoute';
 import CommentFragmentContainer from './CommentFragmentContainer';
 
 class ContentFragment extends React.Component {
@@ -17,7 +17,7 @@ class ContentFragment extends React.Component {
                 <h1>{this.props.content.title}</h1>
                 <p>{this.props.content.message}</p>
                 <a href="#" onClick={this.onRenderComments.bind(this)}>{__('Show Comments')}</a>
-                {this.renderComments()}
+                { this.renderComments() }
             </div>
         );
     }
