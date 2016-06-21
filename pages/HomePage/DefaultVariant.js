@@ -11,7 +11,11 @@ class DefaultVariant extends React.Component {
                 <div>
                     {
                         this.props.app.contents.edges.map((obj, i) => {
-                            return (<ContentFragmentContainer key={i} content={obj.node} />);
+                            return (
+                                <ContentFragmentContainer
+                                    key={i}
+                                    content={obj.node} />
+                            );
                         })
                     }
                 </div>
