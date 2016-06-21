@@ -1,14 +1,23 @@
 import React from 'react';
 import Relay from 'react-relay';
+import Comment from './Comment';
 
-class ContentFragment extends React.Component {
+class CommentFragment extends React.Component {
     render() {
         return (
             <div>
-                <p>{this.props.comment.message}</p>
+                {this.renderComments()}</p>
             </div>
         );
     }
+
+    renderComments() {
+        this.props.app.comments.map( (node, index) => {
+            return (
+                <Comment key={index} comment={node} />
+            );
+        });
+    }
 }
 
-export default ContentFragment;
+export default CommentFragment;

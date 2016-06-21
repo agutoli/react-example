@@ -8,6 +8,7 @@ export default Relay.createContainer(ContentFragment, {
             fragment on Content {
                 title,
                 message
+                universalMessageId
             }
         `
     }

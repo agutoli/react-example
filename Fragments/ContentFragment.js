@@ -1,5 +1,7 @@
 import React from 'react';
 import Relay from 'react-relay';
+
+import CommentRoute from '../CommentRoute';
 import CommentFragmentContainer from './CommentFragmentContainer';
 
 class ContentFragment extends React.Component {
@@ -14,13 +16,13 @@ class ContentFragment extends React.Component {
             <div>
                 <h1>{this.props.content.title}</h1>
                 <p>{this.props.content.message}</p>
-                <a href="#" onClick={this.onRenderComments}>{__('Show Comments')}</a>
+                <a href="#" onClick={this.onRenderComments.bind(this)}>{__('Show Comments')}</a>
                 {this.renderComments()}
             </div>
         );
     }
 
-    onRenderComments: (event) => {
+    onRenderComments(event) {
         event.preventDefault();
         this.setState({
             showComments: true
@@ -33,11 +35,12 @@ class ContentFragment extends React.Component {
         return (
             <div>
                 <h3>{__('Comments')}</h3>
-                {
-                    this.props.app.comments.edges.map((obj, i) => {
-                        return (<CommentFragmentContainer key={i} comment={obj.node} />);
-                    })
-                }
+                <Relay.RootContainer
+                    Component={CommentFragmentContainer}
+                    route={new CommentRoute({
+                        universalMessageId: this.props.content.universalMessageId
+                    })}
+                />
             </div>
         );
     }
