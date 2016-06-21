@@ -26,6 +26,6 @@
     "react-router": "^2.3.0",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1",
-    "xb-common-lib": "git@bitbucket.org:scup/xb-common-lib.git"
+    "xb-common-lib": "git@bitbucket.org:sprinklr/xb-common-lib.git"
   }
 }
