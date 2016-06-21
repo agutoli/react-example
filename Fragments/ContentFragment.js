@@ -1,6 +1,5 @@
 import React from 'react';
 import Relay from 'react-relay';
-
 import CommentFragmentContainer from './CommentFragmentContainer';
 
 class ContentFragment extends React.Component {
@@ -40,7 +39,7 @@ class ContentFragment extends React.Component {
                     })
                 }
             </div>
-        )
+        );
     }
 }
 
