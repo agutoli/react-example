@@ -14,7 +14,7 @@ const config = {
     devtool: 'source-map',
     debug: true,
     entry: {
-        main: './main.js'
+        app: './App.js'
     },
     devServer: {
         port: 8080,
@@ -27,7 +27,8 @@ const config = {
             exclude: /node_modules/,
             loader: 'babel',
             query: {
-              presets: ['react', 'es2015']
+              presets: ['react', 'es2015', 'stage-1'],
+              plugins: [__dirname + '/babelRelayPlugin']
             }
           }
         ]
