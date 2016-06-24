@@ -21,6 +21,14 @@ if (hostname === 'localhost') {
   } catch(e) {}
 }
 
+class Example extends React.Component {
+  render(){
+    return (
+      <div>teste</div>
+    );
+  }
+}
+
 export default (App) => {
     return (
         <Router
@@ -28,7 +36,7 @@ export default (App) => {
             history={browserHistory}
             render={applyRouterMiddleware(useRelay)}>
             <Route
-                path={baseUrl}
+                path={"/"}
                 component={HomePage} />
         </Router>
     );
