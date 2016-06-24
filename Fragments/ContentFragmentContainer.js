@@ -6,6 +6,7 @@ export default Relay.createContainer(ContentFragment, {
     fragments: {
         content: () => Relay.QL`
             fragment on Content {
+                id,
                 title,
                 message
             }

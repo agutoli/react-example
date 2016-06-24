@@ -21,8 +21,8 @@ const config = {
         historyApiFallback: true,
         stats: 'errors-only',
         proxy: {
-         "/schema/data": "http://localhost:5000"
-       }
+          "/schema/data": "http://localhost:5000"
+        },
     },
     module: {
         loaders: [

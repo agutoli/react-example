@@ -1,8 +1,8 @@
 import React from 'react';
 import Relay from 'react-relay';
 
-import CommentFragmentLoaderRoute from './CommentFragmentLoaderRoute';
 import CommentFragmentLoaderContainer from './CommentFragmentLoaderContainer';
+import CommentFragmentLoaderRoute from './CommentFragmentLoaderRoute';
 
 class ContentFragment extends React.Component {
     constructor(props) {
