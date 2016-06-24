@@ -36,12 +36,19 @@ class ContentFragment extends React.Component {
       });
     }
 
+    onCloseModalClick = (event) => {
+       eventHandlers.handleEvents(event, {
+          closeModal: ''
+      });
+    }
+
     render() {
         return (
             <div>
                 <h1>{this.props.content.title}</h1>
                 <button onClick={this.onShareClick}> Share </button>
                 <button onClick={this.onOpenModalClick}> open modal </button>
+                <button onClick={this.onCloseModalClick}> close modal </button>
                 <p>{this.props.content.message}</p>
                 <a href="#" onClick={this.onRenderComments.bind(this)}>{__('Show Comments')}</a>
                 { this.renderComments() }
