@@ -29,7 +29,9 @@ export default (App) => {
             render={applyRouterMiddleware(useRelay)}>
             <Route
                 path={baseUrl}
-                component={HomePage} />
+                component={App}>
+                <IndexRoute component={HomePage} />
+            </Route>
         </Router>
     );
 };

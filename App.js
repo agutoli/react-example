@@ -10,7 +10,7 @@ Relay.injectNetworkLayer(new Relay.DefaultNetworkLayer('/schema/data', {credenti
 class App extends React.Component {
     render(){
         return (
-            <div className="container">
+            <div>
                 <Modal />
                 {this.props.children}
             </div>
