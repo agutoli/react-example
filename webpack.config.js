@@ -19,10 +19,7 @@ const config = {
     devServer: {
         port: 8080,
         historyApiFallback: true,
-        stats: 'errors-only',
-        proxy: {
-          "/schema/data": "http://localhost:5000"
-        },
+        stats: 'errors-only'
     },
     module: {
         loaders: [
