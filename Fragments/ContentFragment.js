@@ -2,6 +2,8 @@ import React from 'react';
 import Relay from 'react-relay';
 import {eventHandlers, XBApi} from 'xb-common-lib';
 
+import SocialShareLoaderContainer from './SocialShareLoaderContainer';
+
 import CommentFragmentLoaderContainer from './CommentFragmentLoaderContainer';
 import CommentFragmentLoaderRoute from './CommentFragmentLoaderRoute';
 
@@ -22,11 +24,16 @@ class ContentFragment extends React.Component {
 
     onShareClick = (event) => {
        eventHandlers.handleEvents(event, {
-          share: {
-          "modal": {
-            "resourceId": "8e0d9036-5692-4974-a02d-60ac2233710c"
-          }
-        },
+          share: (
+            <Relay.RootContainer
+              Component={SocialShareLoaderContainer}
+              route={new CommentFragmentLoaderRoute({
+                  contentId: this.props.content.id
+              })}
+              renderLoading={function() {
+              return <div>Loading...</div>;
+              }} />
+          )
       }, new XBApi(this.props));
     }
 
