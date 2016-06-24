@@ -18,7 +18,8 @@ const config = {
     },
     devServer: {
         port: 8080,
-        historyApiFallback: true
+        historyApiFallback: true,
+        stats: 'errors-only'
     },
     module: {
         loaders: [

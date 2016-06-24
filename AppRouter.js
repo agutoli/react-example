@@ -10,10 +10,7 @@ import {
 } from 'react-router';
 import useRelay from "react-router-relay";
 
-import HomePageContainer from './pages/HomePageContainer';
-import HomePageRoute from './pages/HomePageRoute';
-import DefaultVariantContainer from './pages/HomePage/DefaultVariantContainer';
-import AppQuery from './AppQuery';
+import HomePage from './pages/HomePage';
 
 let baseUrl = '/example';
 const { hostname, pathname } = window.location;
@@ -32,19 +29,7 @@ export default (App) => {
             render={applyRouterMiddleware(useRelay)}>
             <Route
                 path={baseUrl}
-                component={HomePageContainer}
-                queries={AppQuery} />
+                component={HomePage} />
         </Router>
     );
 };
-
-            // <Route path={baseUrl} route={new HomePageRoute()} />
-
-            // <Route path={baseUrl} component={App}>
-            //     <IndexRoute component={HomePageContainer} route={new HomePageRoute()}>
-            //         <Route component={DefaultVariantContainer} />
-            //     </IndexRoute>
-            //     <Route path="/" component={HomePageContainer} route={new HomePageRoute()}>
-            //         <Route component={DefaultVariantContainer} />
-            //     </Route>
-            // </Route>

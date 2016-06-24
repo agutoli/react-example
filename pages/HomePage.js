@@ -4,6 +4,7 @@ import Relay from 'react-relay';
 import { ContainerRenderer } from 'xb-common-lib';
 
 import DefaultVariantContainer from './HomePage/DefaultVariantContainer';
+import DefaultVariantRoute from './HomePage/DefaultVariantRoute';
 
 // class HomePage extends ContainerRenderer {
 //     constructor(props) {
@@ -15,7 +16,9 @@ import DefaultVariantContainer from './HomePage/DefaultVariantContainer';
 class HomePage extends React.Component {
     render() {
         return (
-            <DefaultVariantContainer app={this.props.app} />
+            <Relay.RootContainer
+                Component={DefaultVariantContainer}
+                route={new DefaultVariantRoute()} />
         );
     }
 }
