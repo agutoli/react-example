@@ -12,7 +12,7 @@ export default Relay.createContainer(DefaultVariant, {
                         {
                         filterType: "IN",
                         details:{},
-                        values:["570636dee4b0f6f2d890a4aa"],
+                        values:["56ec210fd4c675f87f31627f"],
                         field:"CONTENT_LIST_ID"
                         }
                     ],
@@ -20,16 +20,17 @@ export default Relay.createContainer(DefaultVariant, {
                         page: 0,
                         size: 10
                     },
-                    experienceId: "5b51be2f-3dfa-46cb-996d-8b0a87aadc76",
-                    projectId: "c293b805-03d6-4adb-8ccc-c54c104dc720"
+                    experienceId: "0cdc67c4-d512-46b5-b86a-580c53d292bb",
+                    projectId: "e508522e-edf2-4b36-8161-c30f1d6b7d7e"
                 }) {
-                    edges {
-                        node {
-                            id,
-                            ${ContentFragmentContainer.getFragment('content')}
-                        }
-                    }
+                edges{
+                  node{
+                    id
+                    message
+                    postId
+                  }
                 }
+              }
             }
         `
     }

@@ -5,6 +5,7 @@ class CommentFragmentLoaderRoute extends Relay.Route {
 
     static queries = {
         app: (Component, { contentId }) => {
+            console.log('router--', contentId);
             return Relay.QL`
                 query {
                     app {
@@ -13,7 +14,7 @@ class CommentFragmentLoaderRoute extends Relay.Route {
                 }
             `;
         }
-    }
+    };
 
     static paramDefinitions = {
         contentId: { required: true }

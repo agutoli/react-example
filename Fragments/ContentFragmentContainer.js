@@ -8,7 +8,8 @@ export default Relay.createContainer(ContentFragment, {
             fragment on Content {
                 id,
                 title,
-                message
+                message,
+                postId
             }
         `
     }

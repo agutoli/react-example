@@ -8,9 +8,9 @@ export default Relay.createContainer(CommentFragmentLoader, {
         initialVariables: { contentId: null },
         app: () => Relay.QL`
             fragment on App {
-                comments(contentId: $contentId, first: 10, query: {
-                    projectId:"c293b805-03d6-4adb-8ccc-c54c104dc720",
-                    experienceId:"5b51be2f-3dfa-46cb-996d-8b0a87aadc76",
+                comments(first: 10, query: {
+                    projectId:"e508522e-edf2-4b36-8161-c30f1d6b7d7e",
+                    experienceId:"0cdc67c4-d512-46b5-b86a-580c53d292bb",
                     filters:[
                         {
                             filterType:"IN",

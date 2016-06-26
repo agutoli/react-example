@@ -3,6 +3,7 @@ import Relay from 'react-relay';
 import {eventHandlers, XBApi} from 'xb-common-lib';
 
 import SocialShareLoaderContainer from './SocialShareLoaderContainer';
+import ShareFragmentLoaderRoute from './ShareFragmentLoaderRoute';
 
 import CommentFragmentLoaderContainer from './CommentFragmentLoaderContainer';
 import CommentFragmentLoaderRoute from './CommentFragmentLoaderRoute';
@@ -10,7 +11,7 @@ import CommentFragmentLoaderRoute from './CommentFragmentLoaderRoute';
 class MyExample extends React.Component {
   render(){
     return (
-      <div>I'm a modal</div>
+      <div>A modal</div>
     );
   }
 }
@@ -18,22 +19,20 @@ class MyExample extends React.Component {
 class ContentFragment extends React.Component {
     constructor(props) {
         super(props);
-
+        console.log('props--', props);
         this.state = { showComments: false };
     }
 
     onShareClick = (event) => {
        eventHandlers.handleEvents(event, {
-          share: (
-            <Relay.RootContainer
+          share: <Relay.RootContainer
               Component={SocialShareLoaderContainer}
-              route={new CommentFragmentLoaderRoute({
-                  contentId: this.props.content.id
+              route={new ShareFragmentLoaderRoute({
+                  contentId: '56ec210fd4c675f87f31627f'
               })}
               renderLoading={function() {
               return <div>Loading...</div>;
               }} />
-          )
       }, new XBApi(this.props));
     }
 
@@ -56,7 +55,9 @@ class ContentFragment extends React.Component {
                 <button onClick={this.onShareClick}> Share </button>
                 <button onClick={this.onOpenModalClick}> open modal </button>
                 <button onClick={this.onCloseModalClick}> close modal </button>
+                <p>{this.props.content.id}</p>
                 <p>{this.props.content.message}</p>
+                <p>PostId - {this.props.content.postId}</p>
                 <a href="#" onClick={this.onRenderComments.bind(this)}>{__('Show Comments')}</a>
                 { this.renderComments() }
             </div>
@@ -66,11 +67,12 @@ class ContentFragment extends React.Component {
     onRenderComments(event) {
         event.preventDefault();
         this.setState({
-            showComments: true
+          showComments: true
         });
     }
 
     renderComments() {
+        console.log('comment props', this.props);
         if (!this.state.showComments) return;
 
         return (
@@ -80,7 +82,7 @@ class ContentFragment extends React.Component {
                 <Relay.RootContainer
                     Component={CommentFragmentLoaderContainer}
                     route={new CommentFragmentLoaderRoute({
-                        contentId: this.props.content.id
+                        contentId: 'Q29udGVudDo1NzBiOTFmN2Q0YzYzNWY1MjU5MTQyMjU='
                     })}
                 />
             </div>
