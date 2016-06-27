@@ -19,7 +19,6 @@ class MyExample extends React.Component {
 class ContentFragment extends React.Component {
     constructor(props) {
         super(props);
-        console.log('props--', props);
         this.state = { showComments: false };
     }
 
@@ -28,10 +27,10 @@ class ContentFragment extends React.Component {
           share: <Relay.RootContainer
               Component={SocialShareLoaderContainer}
               route={new ShareFragmentLoaderRoute({
-                  contentId: '56ec210fd4c675f87f31627f'
+                  postId: this.props.content.postId
               })}
               renderLoading={function() {
-              return <div>Loading...</div>;
+                return <div>Loading...</div>;
               }} />
       }, new XBApi(this.props));
     }
@@ -72,7 +71,6 @@ class ContentFragment extends React.Component {
     }
 
     renderComments() {
-        console.log('comment props', this.props);
         if (!this.state.showComments) return;
 
         return (
@@ -82,7 +80,7 @@ class ContentFragment extends React.Component {
                 <Relay.RootContainer
                     Component={CommentFragmentLoaderContainer}
                     route={new CommentFragmentLoaderRoute({
-                        contentId: 'Q29udGVudDo1NzBiOTFmN2Q0YzYzNWY1MjU5MTQyMjU='
+                        contentId: this.props.content.id
                     })}
                 />
             </div>

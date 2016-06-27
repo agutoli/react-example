@@ -1,11 +1,14 @@
 import Relay from 'react-relay';
 
 class ShareFragmentLoaderRoute extends Relay.Route {
+    static paramDefinitions = {
+        postId: {required: true}
+    };
+
     static routeName = 'ShareFragmentLoaderRoute';
 
     static queries = {
         app: (Component, data) => {
-            console.log('router data--', data);
             return Relay.QL`
                 query {
                     app {
@@ -14,9 +17,6 @@ class ShareFragmentLoaderRoute extends Relay.Route {
                 }
             `;
         }
-    };
-    static paramDefinitions = {
-        contentId: {required: true}
     };
 }
 

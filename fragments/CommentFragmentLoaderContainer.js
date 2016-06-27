@@ -4,11 +4,11 @@ import CommentFragmentLoader from './CommentFragmentLoader';
 import CommentFragmentContainer from './CommentFragmentContainer';
 
 export default Relay.createContainer(CommentFragmentLoader, {
+    initialVariables: { contentId: null },
     fragments: {
-        initialVariables: { contentId: null },
         app: () => Relay.QL`
             fragment on App {
-                comments(first: 10, query: {
+                comments(contentId: $contentId, first: 10, query: {
                     projectId:"e508522e-edf2-4b36-8161-c30f1d6b7d7e",
                     experienceId:"0cdc67c4-d512-46b5-b86a-580c53d292bb",
                     filters:[
@@ -47,7 +47,6 @@ export default Relay.createContainer(CommentFragmentLoader, {
                 }) {
                     edges {
                         node {
-                            id,
                             ${CommentFragmentContainer.getFragment('comment')}
                         }
                     }
