@@ -7,7 +7,7 @@ import HomeResource from './HomeResource';
 class MyContainerContainer extends PageRenderer {
     constructor(props) {
         super(props);
-        this.setTitle('My fist XB experience');
+        this.setTitle('My first XB experience');
         this.addVariant(LoginResource, { requiresAuthentication: false });
         this.addVariant(HomeResource, { requiresAuthentication: true });
     }
