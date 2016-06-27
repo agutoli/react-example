@@ -1,8 +1,8 @@
 import React from 'react';
-import { eventActions } from 'xb-common-lib';
+import { eventActions, VariantRenderer } from 'xb-common-lib';
 import Fragment1 from '../Fragments/f896c611-2e5f-4083-825a-7b8a5eca9cad';
 
-export default class LoginResource extends React.Component {
+export default class LoginResource extends VariantRenderer {
     onClick_node_id_asd8a7d6as6asd63423dsasad(event) {
         // changeStyles(event, {});
         // loadFirstPage(event, {});
