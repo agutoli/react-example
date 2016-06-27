@@ -1,15 +1,15 @@
 import React from 'react';
-import { ContainerRenderer } from 'xb-common-lib';
+import { PageRenderer } from 'xb-common-lib';
 
 import LoginResource from './LoginResource';
 import HomeResource from './HomeResource';
 
-class MyContainerContainer extends ContainerRenderer {
+class MyContainerContainer extends PageRenderer {
     constructor(props) {
         super(props);
-        console.log(this.props.params);
-        this.addResource(LoginResource);
-        this.addResource(HomeResource);
+        this.setTitle('My fist XB experience');
+        this.addVariant(LoginResource, { requiresAuthentication: false });
+        this.addVariant(HomeResource, { requiresAuthentication: true });
     }
 }
 
