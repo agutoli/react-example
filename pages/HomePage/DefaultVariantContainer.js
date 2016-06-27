@@ -5,7 +5,7 @@ import ContentFragmentContainer from '../../fragments/ContentFragmentContainer';
 
 export default Relay.createContainer(DefaultVariant, {
     fragments: {
-        app: () => Relay.QL`
+        query_a965e796_01fe_4486_bc80_2a699e87ae55: () => Relay.QL`
             fragment on App {
                 contents(first: 10, query: {
                     filters: [
