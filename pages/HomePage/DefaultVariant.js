@@ -10,7 +10,7 @@ class DefaultVariant extends React.Component {
                 <h1>Contents</h1>
                 <div>
                     {
-                        this.props.app.contents.edges.map((obj) => {
+                        this.props.query_a965e796_01fe_4486_bc80_2a699e87ae55.contents.edges.map((obj) => {
                             return (
                                 <ContentFragmentContainer
                                     key={obj.node.id}

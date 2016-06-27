@@ -4,11 +4,11 @@ class CommentFragmentLoaderRoute extends Relay.Route {
     static routeName = 'CommentFragmentLoaderRoute';
 
     static queries = {
-        app: (Component, { contentId }) => {
+        query_94f65249_7840_4c88_b28c_91ad7c898004: (Component, { contentId }) => {
             return Relay.QL`
                 query {
                     app {
-                        ${Component.getFragment('app', { contentId })}
+                        ${Component.getFragment('query_94f65249_7840_4c88_b28c_91ad7c898004', { contentId })}
                     }
                 }
             `;
