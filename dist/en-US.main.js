@@ -26081,9 +26081,9 @@
 	
 	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(MyContainerContainer).call(this, props));
 	
-	        _this.setTitle('My fist experience with Xb');
-	        _this.addVariant(_LoginResource2.default, { requiresAuthentication: false });
-	        _this.addVariant(_HomeResource2.default, { requiresAuthentication: true });
+	        _this.setTitle('My fist XB experience');
+	        _this.addVariant(_LoginResource2.default, { requiresAuthentication: !false });
+	        _this.addVariant(_HomeResource2.default, { requiresAuthentication: !true });
 	        return _this;
 	    }
 	
@@ -49999,7 +49999,9 @@
 	}
 	
 	var XBApi = function () {
-	    function XBApi(props, injection) {
+	    function XBApi(props) {
+	        var injection = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
+	
 	        _classCallCheck(this, XBApi);
 	
 	        this.props = props;
@@ -51063,6 +51065,8 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _xbCommonLib = __webpack_require__(232);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -51088,26 +51092,43 @@
 	                {
 	                    __self: this
 	                },
-	                'I, I, I, I. I hope',
+	                _react2.default.createElement(
+	                    'div',
+	                    {
+	                        __self: this
+	                    },
+	                    new _xbCommonLib.XBApi().user().get('name'),
+	                    '\' lyric of the day'
+	                ),
 	                _react2.default.createElement('br', {
 	                    __self: this
 	                }),
-	                'Do you wanna let go?',
-	                _react2.default.createElement('br', {
-	                    __self: this
-	                }),
-	                'Do you wanna this time?',
-	                _react2.default.createElement('br', {
-	                    __self: this
-	                }),
-	                'I hope you wanna let go',
-	                _react2.default.createElement('br', {
-	                    __self: this
-	                }),
-	                'Cause this is home',
-	                _react2.default.createElement('br', {
-	                    __self: this
-	                })
+	                _react2.default.createElement(
+	                    'div',
+	                    {
+	                        __self: this
+	                    },
+	                    'I, I, I, I. I hope',
+	                    _react2.default.createElement('br', {
+	                        __self: this
+	                    }),
+	                    'Do you wanna let go?',
+	                    _react2.default.createElement('br', {
+	                        __self: this
+	                    }),
+	                    'Do you wanna this time?',
+	                    _react2.default.createElement('br', {
+	                        __self: this
+	                    }),
+	                    'I hope you wanna let go',
+	                    _react2.default.createElement('br', {
+	                        __self: this
+	                    }),
+	                    'Cause this is home',
+	                    _react2.default.createElement('br', {
+	                        __self: this
+	                    })
+	                )
 	            );
 	        }
 	    }]);
