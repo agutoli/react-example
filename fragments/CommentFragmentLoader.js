@@ -8,7 +8,7 @@ class CommentFragmentLoader extends React.Component {
         return (
             <div>
                 {
-                    this.props.comments.map((obj) => {
+                    this.props.app.comments.edges.map((obj) => {
                         return (
                             <CommentFragmentContainer
                                 key={obj.node.id}
