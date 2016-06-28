@@ -9,7 +9,9 @@ export default Relay.createContainer(ContentFragment, {
                 id,
                 title,
                 message,
-                postId
+                postId,
+                universalMessageId,
+                shareEnabledChannels
             }
         `
     }

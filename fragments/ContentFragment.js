@@ -27,14 +27,7 @@ class ContentFragment extends React.Component {
 
     onShareClick = (event) => {
        eventHandlers.handleEvents(event, {
-          share: <Relay.RootContainer
-              Component={SocialShareLoaderContainer}
-              route={new ShareFragmentLoaderRoute({
-                  postId: this.props.content.postId
-              })}
-              renderLoading={function() {
-                return <div>Loading...</div>;
-              }} />
+          share: this.props.content
       }, new XBApi(this.props));
     }
 
