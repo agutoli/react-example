@@ -31,14 +31,19 @@ const config = {
     },
     module: {
         loaders: [
+          { test: /\.css$/, loader: "style-loader!css-loader" },
           {
-            test: /\.js$/,
-            exclude: /node_modules/,
-            loader: 'babel',
-            query: {
-              presets: ['react', 'es2015', 'stage-1'],
-              plugins: [__dirname + '/babelRelayPlugin']
-            }
+            test: /\.scss$/,
+            loaders: ["style", "css", "sass"]
+          },
+          {
+              test: /\.js$/,
+              exclude: /node_modules/,
+              loader: 'babel',
+              query: {
+                presets: ['react', 'es2015', 'stage-1'],
+                plugins: [__dirname + '/babelRelayPlugin']
+              }
           }
         ]
     }
