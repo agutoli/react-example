@@ -16,6 +16,11 @@ const config = {
     entry: {
         app: './App.js'
     },
+    resolve: {
+        alias: {
+            react: path.resolve('./node_modules/react')
+        }
+    },
     devServer: {
         port: 8080,
         historyApiFallback: true,

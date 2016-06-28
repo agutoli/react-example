@@ -2,11 +2,13 @@ import React from 'react';
 import Relay from 'react-relay';
 import {
   XBApi,
-  eventHandlers
+  eventHandlers,
+  ShareFragmentLoaderRoute,
+  SocialShareLoaderContainer
 } from 'xb-common-lib';
 
-import ShareFragmentLoaderRoute from './shareFragmentLoaderRoute';
-import SocialShareLoaderContainer from './socialShareLoaderContainer';
+// import ShareFragmentLoaderRoute from './shareFragmentLoaderRoute';
+// import SocialShareLoaderContainer from './socialShareLoaderContainer';
 
 import CommentFragmentLoaderContainer from './CommentFragmentLoaderContainer';
 import CommentFragmentLoaderRoute from './CommentFragmentLoaderRoute';
