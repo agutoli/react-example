@@ -16,6 +16,27 @@ class MyExample extends React.Component {
   }
 }
 
+class LoginExample extends React.Component {
+  onLoginClick = (event) => {
+      eventHandlers.handleEvents(event, {
+          authenticate: {
+            "app": {
+              "id": "56fe8d8fd4c6662f204cc0b7",
+              "provider": "TWITTER",
+              "title": "Twitter app",
+              "refresh": false
+            }
+          },
+      }, new XBApi(this.props));
+  }
+
+  render(){
+    return (
+      <button onClick={this.onLoginClick}>Click to login</button>
+    );
+  }
+}
+
 class ContentFragment extends React.Component {
     constructor(props) {
         super(props);
@@ -24,7 +45,10 @@ class ContentFragment extends React.Component {
 
     onShareClick = (event) => {
        eventHandlers.handleEvents(event, {
-          share: this.props.content
+          share: {
+            loginFragment: LoginExample,
+            options: this.props
+          }
       }, new XBApi(this.props));
     }
 
