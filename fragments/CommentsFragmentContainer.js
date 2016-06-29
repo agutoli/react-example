@@ -1,9 +1,9 @@
 import Relay from 'react-relay';
 
-import CommentFragmentLoader from './CommentFragmentLoader';
+import CommentsFragment from './CommentsFragment';
 import CommentFragmentContainer from './CommentFragmentContainer';
 
-export default Relay.createContainer(CommentFragmentLoader, {
+export default Relay.createContainer(CommentsFragment, {
     initialVariables: { contentId: null },
     fragments: {
         query_94f65249_7840_4c88_b28c_91ad7c898004: () => Relay.QL`

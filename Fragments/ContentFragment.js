@@ -1,8 +1,8 @@
 import React from 'react';
 import Relay from 'react-relay';
 
-import CommentFragmentLoaderContainer from './CommentFragmentLoaderContainer';
-import CommentFragmentLoaderRoute from './CommentFragmentLoaderRoute';
+import CommentsFragmentContainer from './CommentsFragmentContainer';
+import CommentsFragmentRoute from './CommentsFragmentRoute';
 
 class ContentFragment extends React.Component {
     constructor(props) {
@@ -34,10 +34,9 @@ class ContentFragment extends React.Component {
 
         return (
             <div>
-                <h3>{__('Comments')}</h3>
                 <Relay.RootContainer
-                    Component={CommentFragmentLoaderContainer}
-                    route={new CommentFragmentLoaderRoute({
+                    Component={CommentsFragmentContainer}
+                    route={new CommentsFragmentRoute({
                         contentId: this.props.content.id
                     })}
                 />

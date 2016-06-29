@@ -1,7 +1,7 @@
 import Relay from 'react-relay';
 
-class CommentFragmentLoaderRoute extends Relay.Route {
-    static routeName = 'CommentFragmentLoaderRoute';
+class CommentsFragmentRoute extends Relay.Route {
+    static routeName = 'CommentsFragmentRoute';
 
     static queries = {
         query_94f65249_7840_4c88_b28c_91ad7c898004: (Component, { contentId }) => {
@@ -20,4 +20,4 @@ class CommentFragmentLoaderRoute extends Relay.Route {
     };
 }
 
-export default CommentFragmentLoaderRoute;
+export default CommentsFragmentRoute;
