@@ -1,45 +1,24 @@
 import React from 'react';
 import Relay from 'react-relay';
 
-import CommentsFragmentContainer from './CommentsFragmentContainer';
-import CommentsFragmentRoute from './CommentsFragmentRoute';
+import CommentFragmentContainer from './CommentFragmentContainer';
 
 class ContentFragment extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = { showComments: false };
-    }
-
     render() {
         return (
             <div>
-                <h1>{this.props.content.title}</h1>
+                <h2>{this.props.content.title}</h2>
                 <p>{this.props.content.message}</p>
-                <a href="#" onClick={this.onRenderComments.bind(this)}>{__('Show Comments')}</a>
-                { this.renderComments() }
-            </div>
-        );
-    }
-
-    onRenderComments(event) {
-        event.preventDefault();
-        this.setState({
-            showComments: true
-        });
-    }
-
-    renderComments() {
-        if (!this.state.showComments) return;
-
-        return (
-            <div>
-                <Relay.RootContainer
-                    Component={CommentsFragmentContainer}
-                    route={new CommentsFragmentRoute({
-                        contentId: this.props.content.id
-                    })}
-                />
+                <h3>Comments</h3>
+                {
+                    this.props.query_94f65249_7840_4c88_b28c_91ad7c898004.comments.edges.map((obj) => {
+                        return (
+                            <CommentFragmentContainer
+                                key={obj.node.id}
+                                comment={obj.node} />
+                        );
+                    })
+                }
             </div>
         );
     }
