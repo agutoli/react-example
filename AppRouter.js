@@ -1,5 +1,7 @@
 import React from 'react';
 import Relay from 'react-relay';
+import { useHistory, useConfig } from 'xb-common-lib';
+
 import {
     applyRouterMiddleware,
     IndexRoute,
@@ -22,6 +24,16 @@ if (hostname === 'localhost') {
 }
 
 export default (App) => {
+    useHistory(browserHistory);
+    // similiar with enviroment.js
+    useConfig({
+      host: {
+        hostname: 'localhost',
+        port: '5000',
+        protocol: 'http:'
+      }
+    });
+
     return (
         <Router
             environment={Relay.Store}
