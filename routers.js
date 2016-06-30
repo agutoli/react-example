@@ -15,7 +15,14 @@ if(hostname === 'localhost') {
 
 export default (App) => {
     useHistory(browserHistory);
-    useConfig({TESTE: 1, FOO: 2});
+    // similiar with enviroment.js
+    useConfig({
+      host: {
+        hostname: 'localhost',
+        port: '5000',
+        protocol: 'http:'
+      }
+    });
 
     return (
         <Router history={browserHistory}>
