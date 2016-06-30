@@ -8,13 +8,13 @@ export default class LoginResource extends React.Component {
         // loadFirstPage(event, {});
         // runScript(event, {});
         // eventActions.hideModal();
-        alert('When implemented this button will hide a modal');
+        // alert('When implemented this button will hide a modal');
     };
 
     onClick_node_id_423rskfdsjf434rjdsadasdas(event) {
         // runScript(event, {});
         // eventActions.showModal(<Fragment1 />);
-        alert('This will show you a modal, once it is implemented');
+        // alert('This will show you a modal, once it is implemented');
     };
 
     render(){

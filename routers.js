@@ -1,5 +1,6 @@
 import React from 'react';
 import { Router, IndexRoute, Route, Link, browserHistory } from 'react-router';
+import { Modal, useHistory, useConfig } from 'xb-common-lib';
 
 import MyContainerContainer from './MyContainer/MyContainerContainer';
 
@@ -13,6 +14,9 @@ if(hostname === 'localhost') {
 }
 
 export default (App) => {
+    useHistory(browserHistory);
+    useConfig({TESTE: 1, FOO: 2});
+
     return (
         <Router history={browserHistory}>
             <Route path={baseUrl} component={App}>
