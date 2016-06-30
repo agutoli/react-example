@@ -11,7 +11,9 @@ import CommentFragmentLoaderRoute from './CommentFragmentLoaderRoute';
 class MyExample extends React.Component {
   render(){
     return (
-      <div>A modal</div>
+      <div className="modal-content">
+        <div className="modal-body">A modal</div>
+      </div>
     );
   }
 }
@@ -32,7 +34,11 @@ class LoginExample extends React.Component {
 
   render(){
     return (
-      <button onClick={this.onLoginClick}>Click to login</button>
+       <div className="modal-content">
+        <div className="modal-body">
+          <button onClick={this.onLoginClick}>Click to login</button>
+        </div>
+      </div>
     );
   }
 }

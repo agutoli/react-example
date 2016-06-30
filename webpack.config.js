@@ -61,7 +61,12 @@ const bundles = LANGUAGES.map((language) => {
         },
         name: language,
         plugins: [
-            new I18nPlugin(languageContent)
+            new I18nPlugin(languageContent),
+            new webpack.ProvidePlugin({
+              $: 'jquery',
+              jQuery: 'jquery',
+              'window.jQuery': 'jquery'
+            })
         ]
     });
 });
