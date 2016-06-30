@@ -53,8 +53,7 @@ class ContentFragment extends React.Component {
        eventHandlers.handleEvents(event, {
           share: {
             loginFragment: LoginExample,
-            options: this.props,
-            postId: '56ec210fd4c675f87f31627f'
+            options: this.props
           }
       }, new XBApi(this.props));
     }
