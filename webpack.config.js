@@ -14,21 +14,36 @@ const config = {
     devtool: 'source-map',
     debug: true,
     entry: {
-        main: './main.js'
+        app: './App.js'
+    },
+    resolve: {
+        alias: {
+            react: path.resolve('./node_modules/react')
+        }
     },
     devServer: {
         port: 8080,
-        historyApiFallback: true
+        historyApiFallback: true,
+        stats: 'errors-only',
+        proxy: {
+          "/schema/data": "http://localhost:5000"
+        },
     },
     module: {
         loaders: [
+          { test: /\.css$/, loader: "style-loader!css-loader" },
           {
-            test: /\.js$/,
-            exclude: /node_modules/,
-            loader: 'babel',
-            query: {
-              presets: ['react', 'es2015']
-            }
+            test: /\.scss$/,
+            loaders: ["style", "css", "sass"]
+          },
+          {
+              test: /\.js$/,
+              exclude: /node_modules/,
+              loader: 'babel',
+              query: {
+                presets: ['react', 'es2015', 'stage-1'],
+                plugins: [__dirname + '/babelRelayPlugin']
+              }
           }
         ]
     }
@@ -46,7 +61,12 @@ const bundles = LANGUAGES.map((language) => {
         },
         name: language,
         plugins: [
-            new I18nPlugin(languageContent)
+            new I18nPlugin(languageContent),
+            new webpack.ProvidePlugin({
+              $: 'jquery',
+              jQuery: 'jquery',
+              'window.jQuery': 'jquery'
+            })
         ]
     });
 });
